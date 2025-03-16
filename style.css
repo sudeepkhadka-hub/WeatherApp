@@ -1,4 +1,91 @@
-*{
-    margin: 0%;
-    
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    /* transition: background 0.3s, color 0.3s; */
+}
+
+h2 {
+    text-align: center;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#newsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.news-card {
+    background: white;
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* .news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+} */
+
+/* .news-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.news-card p {
+    font-size: 14px;
+    color: #555;
+} */
+
+.news-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .news-card {
+    background: #444;
+    color: white;
+}
+
+.dark-mode button {
+    background-color: #555;
 }

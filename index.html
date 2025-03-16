@@ -7,7 +7,21 @@
     <title>Weather-app</title>
   </head>
   <body>
-    <div>hello world!</div>
+    <h2>Live weather Updates</h2>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="search here...." />
+      <select id="categorySelect">
+        <option value="kathmandu">Kathmandu</option>
+        <option value="biratnagar">Biratnagar</option>
+        <option value="jhapa">Jhapa</option>
+      </select>
+      <button onclick="fetchWeather()">search</button>
+      <button onclick="toggleDarkMode()">dark mode</button>
+    </div>
+
+    <div id="weatherContainer"></div>
+
     <script src="app.js"></script>
   </body>
 </html>
