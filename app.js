@@ -11,16 +11,13 @@ async function fetchWeather(query = 'Kathmandu') {
         const response = await fetch(url);
         const data = await response.json();
 
-        // Check if the request was successful (HTTP status 200)
         if (data.cod === 200) {
             displayWeather(data);  // Display weather data if successful
         } else {
-            // If the city is not found or any other error in the API response
             console.error("Failed to fetch weather data:", data.message);
             weatherContainer.innerHTML = `<p style="color: red;">Error: ${data.message}. Please check the city name and try again.</p>`;
         }
     } catch (error) {
-        // Handle any network or other errors
         console.error("Error fetching weather data:", error);
         weatherContainer.innerHTML = `<p style="color: red;">There was an error fetching the weather data. Please try again later.</p>`;
     }
@@ -47,14 +44,10 @@ function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
 //search 
-searchInput.addEventListener("input", function () {
-    clearTimeout(debounceTimeout); 
-    debounceTimeout = setTimeout(() => {
-        const query = searchInput.value.trim();
-        if (query) {
-            fetchWeather(query);
-        }}
-)}, 5000); 
+searchInput.addEventListener("input", deBounce);
+
+
+    
 //btnnn
     searchButton.addEventListener("click", function () {
     const query = searchInput.value.trim();
@@ -64,3 +57,13 @@ searchInput.addEventListener("input", function () {
 });
 
 fetchWeather();
+
+function deBounce(){
+clearTimeout(debounceTimeout); 
+    debounceTimeout = setTimeout(() => {
+        const query = searchInput.value.trim();
+        if (query) {
+            fetchWeather(query);
+        }
+}, 5000); 
+}
